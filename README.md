@@ -2,6 +2,12 @@
 
 Build a responsive portfolio website using Next.js, React, and Tailwind CSS that supports dynamic theme switching (light and dark modes) and user preferences (e.g., font size, reduced motion). This project will utilize `useReducer` and `Context` for state management.
 
+## Building Your Portfolio Site
+
+- **Hero Section**: Introduce yourself with a compelling headline and a brief bio.
+- **Projects Section**: Display your projects using cards or a grid layout. Each project should have a title, description, used tech and possibly a link to the live site or code repository.
+- **Contact Section**: Provide your professional contact information.
+
 ## Setup Project
 
 ```bash
@@ -46,25 +52,6 @@ export const ThemeProvider = ({ children }) => {
 export const useTheme = () => useContext(ThemeContext);
 ```
 
-## Building Your Portfolio Site
-
-- **Hero Section**: Introduce yourself with a compelling headline and a brief bio.
-- **Projects Section**: Display your projects using cards or a grid layout. Each project should have a title, description, used tech and possibly a link to the live site or code repository.
-- **Contact Section**: Provide your professional contact information.
-
-## Hand in Assignment
-
-1. Initialize a git repository in your project if you haven't already.
-2. Create a repository on GitHub and push your project there.
-3. Submit the link to your GitHub repository on Canvas.
-
-## :books: Reading List
-
-- [Next.js Documentation](https://nextjs.org/docs)
-- [React Context](https://reactjs.org/docs/context.html)
-- [React useReducer Hook](https://reactjs.org/docs/hooks-reference.html#usereducer)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-
 ## Applying the Theme Dynamically
 
 In tailwind dark or light mode is set by adding or removing a class called `dark` in the root html tag. Use `ThemeContext` in `_app.js` to apply the theme class to the root element:
@@ -91,6 +78,19 @@ export default ({ Component, pageProps }) => (
   </ThemeProvider>
 );
 ```
+
+## Hand in Assignment
+
+1. Initialize a git repository in your project if you haven't already.
+2. Create a repository on GitHub and push your project there.
+3. Submit the link to your GitHub repository on Canvas.
+
+## :books: Reading List
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [React Context](https://reactjs.org/docs/context.html)
+- [React useReducer Hook](https://reactjs.org/docs/hooks-reference.html#usereducer)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 
 ## Creating the ThemeSwitcher and Handling User Preferences
 
