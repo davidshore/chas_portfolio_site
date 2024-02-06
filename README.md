@@ -79,6 +79,14 @@ export default ({ Component, pageProps }) => (
 );
 ```
 
+## Creating the ThemeSwitcher and Handling User Preferences
+
+Implement a component to toggle the theme and adjust user preferences:
+
+## Using User Preferences in Components
+
+Demonstrate using `userPreferences` in a component, adjusting styles based on the context state:
+
 ## Hand in Assignment
 
 1. Initialize a git repository in your project if you haven't already.
@@ -91,14 +99,6 @@ export default ({ Component, pageProps }) => (
 - [React Context](https://reactjs.org/docs/context.html)
 - [React useReducer Hook](https://reactjs.org/docs/hooks-reference.html#usereducer)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-
-## Creating the ThemeSwitcher and Handling User Preferences
-
-Implement a component to toggle the theme and adjust user preferences:
-
-## Using User Preferences in Components
-
-Demonstrate using `userPreferences` in a component, adjusting styles based on the context state:
 
 ### :boom: Success!
 
