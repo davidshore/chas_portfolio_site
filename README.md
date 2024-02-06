@@ -8,7 +8,7 @@ Build a responsive portfolio website using Next.js, React, and Tailwind CSS that
 - **Projects Section**: Display your projects using cards or a grid layout. Each project should have a title, description, used tech and possibly a link to the live site or code repository.
 - **Contact Section**: Provide your professional contact information.
 
-(Example portfolio in figma)[https://www.figma.com/community/file/1116246660507537002]
+[Example portfolio in figma](https://www.figma.com/community/file/1116246660507537002)
 
 ## Setup Project
 
