@@ -2,10 +2,10 @@
 
 In this assignment, you’ll build a portfolio website using Next.js, React, and Tailwind CSS, where users can:
 
-✅ Display their projects on a portfolio page
-✅ Add, edit, and delete projects via an admin page
-✅ Save all data in Context so that updates in admin are reflected in portfolio
-✅ Persist projects to a JSON string with local storage
+- Display their projects on a portfolio page
+- Add, edit, and delete projects via an admin page
+- Save all data in Context so that updates in admin are reflected in portfolio
+- Persist projects to a JSON string with local storage
 
 You’ll use React Context for managing projects globally.
 
