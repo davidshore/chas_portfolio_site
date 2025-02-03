@@ -45,10 +45,11 @@ Show Projects and Tech skills at the bottom of the page so that you see that the
 
 ```
 const [loggedIn, setLoggedIn] = useState(false);
-const [credentials, setCredentials] = useState({ username: "", password: "" });
+const [username, setUsername] = useState("");
+const [password, setPassword] = useState("");
 
   function handleLogin(){
-    if (credentials.username === "admin" && credentials.password === "password") {
+    if (username === "admin" && password === "your password") {
       setLoggedIn(true);
     } else {
       alert("Invalid login");
