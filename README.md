@@ -1,10 +1,19 @@
-# React Portfolio Site with Theme Switching
+# React Portfolio with Admin Page
 
-Build a responsive portfolio website using Next.js, React, and Tailwind CSS that supports dynamic theme switching (light and dark modes) and user preferences (e.g., font size, reduced motion). This project will utilize `useReducer` and `Context` for state management.
+In this assignment, you’ll build a portfolio website using Next.js, React, and Tailwind CSS, where users can:
+✅ Display their projects on a portfolio page
+✅ Add, edit, and delete projects via an admin page
+✅ Save all data in Context so that updates in admin are reflected in portfolio
+✅ Persist projects to a JSON string with local storage
+
+You’ll use React Context for managing projects globally.
+
+In the next course (Backend and devops), you will publish your portfolio on the web and we will store the JSON in a database.
 
 ## Building Your Portfolio Site
 
 - **Hero Section**: Introduce yourself with a compelling headline and a brief bio.
+- **Tech skills**: Display your current skills and experience.
 - **Projects Section**: Display your projects using cards or a grid layout. Each project should have a title, description, used tech and possibly a link to the live site or code repository.
 - **Contact Section**: Provide your professional contact information.
 
@@ -16,78 +25,35 @@ Build a responsive portfolio website using Next.js, React, and Tailwind CSS that
 npx create-next-app portfolio
 ```
 
-Edit `tailwind.config.js` to enable dark mode:
+## Create context
 
-```javascript
-module.exports = {
-  darkMode: "class",
-  // other configurations...
-};
+We'll store the portfolio projects and tech skills in React Context.
+
+Create `contexts/PortfolioContext.js`. Read from local storage if it exists, otherwise initialize an empty array for both projects and tech skills.
+
+## Portfolio Page (Display Projects and Tech Skills)
+
+Create `pages/index.js` and display the data you have in context together with your portfolio layout:
+
+## Admin Page (Add/Edit/Delete Projects and Tech Skills)
+
+Create `pages/admin.js`. All data should be saved to context and local storage.
+Show Projects and Tech skills at the bottom of the page so that you see that they update correctly. The page should be secured with a login and password. In the next course we will store the password securely in a database.
+
+### Starting code for username and password:
+
 ```
+const [loggedIn, setLoggedIn] = useState(false);
+const [credentials, setCredentials] = useState({ username: "", password: "" });
 
-## ThemeContext and ThemeProvider
-
-Create `ThemeContext.js` to manage theme and user preferences:
-
-```javascript
-import React, { createContext, useContext, useReducer } from "react";
-
-const ThemeContext = createContext();
-
-const initialState = {
-  theme: "light",
-  userPreferences: {
-    fontSize: "medium",
-    reduceAnimations: false,
-  },
-};
-
-function themeReducer(state, action) {
-  // your code here
-}
-
-export const ThemeProvider = ({ children }) => {
-  // your code here
-};
-
-// Create and use your own hook instead of using useContext in the components
-export const useTheme = () => useContext(ThemeContext);
+  function handleLogin(){
+    if (credentials.username === "admin" && credentials.password === "password") {
+      setLoggedIn(true);
+    } else {
+      alert("Invalid login");
+    }
+  };
 ```
-
-## Applying the Theme Dynamically
-
-In tailwind dark or light mode is set by adding or removing a class called `dark` in the root html tag. Use `ThemeContext` in `_app.js` to apply the theme class to the root element:
-
-```javascript
-import { useEffect } from "react";
-import { ThemeProvider, useTheme } from "../contexts/ThemeContext";
-import "../styles/globals.css";
-
-function MyApp({ Component, pageProps }) {
-  const { state } = useTheme();
-
-  useEffect(() => {
-    // Your code here. Add the dark class to the <html /> tag
-    // with vanilla js.
-  }, [state.theme]);
-
-  return <Component {...pageProps} />;
-}
-
-export default ({ Component, pageProps }) => (
-  <ThemeProvider>
-    <MyApp Component={Component} pageProps={pageProps} />
-  </ThemeProvider>
-);
-```
-
-## Creating the ThemeSwitcher and Handling User Preferences
-
-Implement a component to toggle the theme and adjust user preferences:
-
-## Using User Preferences in Components
-
-Demonstrate using `userPreferences` in a component, adjusting styles based on the context state:
 
 ## Hand in Assignment
 
@@ -99,13 +65,12 @@ Demonstrate using `userPreferences` in a component, adjusting styles based on th
 
 - [Next.js Documentation](https://nextjs.org/docs)
 - [React Context](https://reactjs.org/docs/context.html)
-- [React useReducer Hook](https://reactjs.org/docs/hooks-reference.html#usereducer)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 
 ### :boom: Success!
 
-Completing this assignment will significantly enhance your understanding of state management in React using `useReducer` and `Context`. You'll also gain more experience with Next.js, creating more dynamic and interactive web applications.
+Completing this assignment will significantly enhance your understanding of state management in React using `Context`. You'll also gain more experience with Next.js, creating more dynamic and interactive web applications.
 
 ### :runner: Stretch goals
 
-Add one or two more color schemes to your theme.
+Add dark mode and light mode to your portfolio.
